@@ -10,7 +10,7 @@ PHP: 잘못된 디자인의 프랙탈
 ------------
 이 글은 영문으로 된 [원문](http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/)을 [@segfault](http://about.me/segfault)님이 번역, [@noraesae](https://github.com/noraesae)가 Markdown 포맷으로 변경한 글입니다.
 
-Issues 및 Pull Requests를 통해서 번역 및 본문 업데이트에 따른 수정을 받습니다.
+Issues 및 Pull Requests를 통해서 번역 및 원문 업데이트에 따른 수정을 받습니다.
 
 PHP에 대한 옹호 등을 포함한 논쟁은 [원문 링크](http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/)에서 해주시기 바랍니다.
 
