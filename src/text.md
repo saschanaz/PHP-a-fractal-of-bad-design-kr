@@ -176,7 +176,7 @@ CPAN은 "Perl의 표준 라이브러리"로 불려 왔습니다. 그게 Perl의 
 - 배열에 내용을 추가시키려면 `$foo[] = bar;`처럼 합니다.
 - `echo`는 함수가 아니라 선언문 같은 겁니다.
 - `empty($var)`는 함수같이 생겼지만 함수가 아닌 것의 극단적인 예일 것입니다. 예를 들어 `empty($var || $var2)는` 파싱 오류를 냅니다. 대체 세상에 왜 파서가 [empty](http://phpsadness.com/sad/28)라는 것의 존재에 대해서 알고 있어야 하는 겁니까?
-- 블록을 정의하는 쓸데없는 문법이 있습니다. `if (...): ... endof;` 등등...
+- 블록을 정의하는 쓸데없는 문법이 있습니다. `if (...): ... endif;` 등등...
 
 #### 오류 처리
 - PHP의 독특한 연산자 중 하나가 에러 출력을 씹는 데 사용되는 `@`입니다. (실제로는 DOS에서 가져옴)
@@ -229,7 +229,9 @@ CPAN은 "Perl의 표준 라이브러리"로 불려 왔습니다. 그게 Perl의 
   ```
   는 이런 에러를 발생합니다.
 
-  `PHP Catchable fatal error: Argument 1 passed to foo() must be an instance of string, string given, called in...`
+  ```
+  PHP Catchable fatal error: Argument 1 passed to foo() must be an instance of string, string given, called in...
+  ```
 
   - 아마 "형 힌트"라는 것이 애시당초 존재할 필요가 없다는 걸 알아차리실 지도 모르겠습니다. `string` 같은 클래스는 없죠. 만약 `ReflectionParameter::getClass()`로 형 힌트를 동적으로 검사하려고 하면 그런 클래스는 존재하지 않는다고 할 겁니다. 따라서 실제 클래스 명을 받아오는 것은 불가능하게 되죠.
   - 함수의 반환값은 힌팅할 수 없습니다.
