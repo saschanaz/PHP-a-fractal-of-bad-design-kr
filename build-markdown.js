@@ -1,27 +1,15 @@
-var async = require('async')
-  , ejs = require('ejs')
-  , fs = require('fs')
-  , marked = require('marked');
+const ejs = require('ejs');
+const fs = require('fs-extra');
+const marked = require('marked');
 
-
-var readFile = function (fileName) {
-  return function (callback) {
-    fs.readFile(__dirname + '/src/' + fileName, 'utf-8', callback);
+(async () => {
+  const files = {
+    template: await fs.readFile(`${__dirname}/src/index.ejs`, 'utf-8'),
+    text: await fs.readFile(`${__dirname}/src/text.md`, 'utf-8')
   };
-};
 
-async.parallel({
-  template: readFile('index.ejs'),
-  text: readFile('text.md')
-},
-function (err, files) {
-  if (err) throw err;
-
-  marked(files.text, {
+  const content = marked(files.text, {
     gfm: true,
-    highlight: function (code, lang, callback) {
-      callback(null, code);
-    },
     tables: true,
     breaks: false,
     pedantic: false,
@@ -29,16 +17,10 @@ function (err, files) {
     smartLists: true,
     smartypants: false,
     langPrefix: 'lang-'
-  },
-  function (err, content) {
-    if (err) throw err;
-
-    var builtText = ejs.render(files.template, {text: content});
-    fs.writeFile(__dirname + '/index.html', builtText, function (err) {
-      if (err) throw err;
-
-      console.log("Finished.");
-    });
   });
-});
 
+  const builtText = ejs.render(files.template, { text: content });
+  await fs.writeFile(`${__dirname}/index.html`, builtText);
+
+  console.log("Finished.");
+})();
