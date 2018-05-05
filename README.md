@@ -4,7 +4,8 @@ PHP: 잘못된 디자인의 프랙탈
 본문
 ----
 본문은 아래 페이지에서 읽으실 수 있습니다.  
-* http://noraesae.github.io/PHP-a-fractal-of-bad-design-kr
+* ~~http://noraesae.github.io/PHP-a-fractal-of-bad-design-kr~~ 원본 레포가 삭제되어 링크를 대체합니다.
+* http://saschanaz.github.io/PHP-a-fractal-of-bad-design-kr
 
 읽기 전에...
 ------------
