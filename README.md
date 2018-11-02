@@ -24,8 +24,8 @@ PHP에 대한 옹호 등을 포함한 논쟁은 [원문 링크](http://me.veekun
 `index.html`파일 빌드를 위해서 [Node.js](http://nodejs.org/)가 필요합니다.
 
 ```
-$ git clone https://github.com/noraesae/PHP-a-fractal-of-bad-design-kr.git
+$ git clone https://github.com/saschanaz/PHP-a-fractal-of-bad-design-kr.git
 $ cd PHP-a-fractal-of-bad-design-kr
 $ npm install
-$ node build-markdown.js
+$ npm run build
 ```
